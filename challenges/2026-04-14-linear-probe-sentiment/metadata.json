@@ -1,0 +1,12 @@
+{
+  "date": "2026-04-14",
+  "title": "Build a Linear Probe for Sentiment",
+  "category": "Coding",
+  "difficulty": "medium",
+  "relevance": "Linear probing is the workhorse of mech interp — the Linear Representation Hypothesis in action.",
+  "source": "seed-bank",
+  "hints": [
+    "The probe weight vector w = probe.coef_[0] is a direction in R^768 whose cosine similarity with the true direction approaches 1.0.",
+    "For the random baseline: project onto a random unit vector, threshold at the median. This gives ~50% accuracy."
+  ]
+}

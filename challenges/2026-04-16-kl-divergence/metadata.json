@@ -1,0 +1,12 @@
+{
+  "date": "2026-04-16",
+  "title": "KL Divergence: Properties and Intuition",
+  "category": "Math",
+  "difficulty": "medium",
+  "relevance": "KL divergence is fundamental to model distillation, RLHF, and understanding distribution shifts during fine-tuning.",
+  "source": "seed-bank",
+  "hints": [
+    "Jensen's inequality: for a concave function f, E[f(X)] <= f(E[X]). The logarithm is concave.",
+    "For a bimodal teacher and unimodal student: forward KL is mean-seeking, reverse KL is mode-seeking."
+  ]
+}

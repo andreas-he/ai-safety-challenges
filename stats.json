@@ -1,0 +1,11 @@
+{
+  "streak": 0,
+  "totalChallenges": 0,
+  "solved": 0,
+  "categories": {
+    "Coding": { "total": 0, "solved": 0 },
+    "Math": { "total": 0, "solved": 0 },
+    "Conceptual-coding": { "total": 0, "solved": 0 }
+  },
+  "history": []
+}

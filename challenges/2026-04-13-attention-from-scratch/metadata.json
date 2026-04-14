@@ -1,0 +1,12 @@
+{
+  "date": "2026-04-13",
+  "title": "Implement Scaled Dot-Product Attention",
+  "category": "Coding",
+  "difficulty": "medium",
+  "relevance": "Core transformer primitive — foundational for mech interp, induction heads, and circuit analysis.",
+  "source": "seed-bank",
+  "hints": [
+    "For numerically stable softmax: subtract the row maximum before exponentiating.",
+    "Causal masking: create an upper-triangular boolean mask with np.triu, set masked positions to -1e9 before softmax."
+  ]
+}
