@@ -1,0 +1,107 @@
+name: Evaluate Challenge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'challenges/**/challenge.py'
+      - 'challenges/**/test_challenge.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest numpy
+
+      - name: Detect changed challenge
+        id: detect
+        run: |
+          BEFORE="${{ github.event.before }}"
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            BEFORE="HEAD~1"
+          fi
+          CHANGED_DIR=$(git diff --name-only "$BEFORE" HEAD -- 'challenges/**/challenge.py' 'challenges/**/test_challenge.py' \
+            | head -1 | xargs -r dirname)
+          if [ -z "$CHANGED_DIR" ]; then
+            echo "No challenge.py/test_challenge.py changed; exiting cleanly."
+            echo "slug=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          SLUG=$(basename "$CHANGED_DIR")
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "dir=$CHANGED_DIR" >> "$GITHUB_OUTPUT"
+          echo "Detected challenge: $SLUG ($CHANGED_DIR)"
+
+      - name: Run tests
+        if: steps.detect.outputs.slug != ''
+        id: tests
+        continue-on-error: true
+        run: |
+          cd "${{ steps.detect.outputs.dir }}"
+          pytest test_challenge.py -v
+
+      - name: Reveal solution (on pass)
+        if: steps.detect.outputs.slug != '' && steps.tests.outcome == 'success'
+        run: |
+          SLUG="${{ steps.detect.outputs.slug }}"
+          git fetch origin solutions
+          if git show "origin/solutions:challenges/$SLUG/solution.py" > /tmp/solution.py 2>/dev/null; then
+            cp /tmp/solution.py "challenges/$SLUG/solution.py"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add "challenges/$SLUG/solution.py"
+            if ! git diff --cached --quiet; then
+              git commit -m "Reveal solution for $SLUG [skip ci]"
+              git push
+            fi
+          else
+            echo "No reference solution found for $SLUG on solutions branch."
+          fi
+
+      - name: Update stats
+        if: steps.detect.outputs.slug != ''
+        run: |
+          EXIT_CODE=0
+          if [ "${{ steps.tests.outcome }}" != "success" ]; then
+            EXIT_CODE=1
+          fi
+          if [ -f scripts/update_stats.py ]; then
+            python scripts/update_stats.py "${{ steps.detect.outputs.dir }}" "$EXIT_CODE"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add stats.json || true
+            if ! git diff --cached --quiet; then
+              STATUS="passed"
+              [ "$EXIT_CODE" != "0" ] && STATUS="failed"
+              git commit -m "Update stats: ${{ steps.detect.outputs.slug }} $STATUS [skip ci]"
+              git push
+            fi
+          fi
+
+      - name: Fail job if tests failed
+        if: steps.detect.outputs.slug != '' && steps.tests.outcome != 'success'
+        run: |
+          echo "Tests failed for ${{ steps.detect.outputs.slug }}"
+          exit 1
