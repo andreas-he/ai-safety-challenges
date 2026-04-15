@@ -1,11 +1,18 @@
 {
-  "streak": 0,
-  "totalChallenges": 0,
+  "streak": 4,
+  "totalChallenges": 4,
   "solved": 0,
   "categories": {
-    "Coding": { "total": 0, "solved": 0 },
-    "Math": { "total": 0, "solved": 0 },
-    "Conceptual-coding": { "total": 0, "solved": 0 }
+    "short-coding": { "total": 3, "solved": 0 },
+    "multiple-choice": { "total": 0, "solved": 0 },
+    "explain": { "total": 0, "solved": 0 },
+    "read-reflect": { "total": 0, "solved": 0 },
+    "Conceptual-coding": { "total": 1, "solved": 0 }
   },
-  "history": []
+  "history": [
+    { "date": "2026-04-13", "slug": "2026-04-13-attention-from-scratch", "category": "short-coding", "title": "Implement Scaled Dot-Product Attention", "solved": false },
+    { "date": "2026-04-14", "slug": "2026-04-14-linear-probe-sentiment", "category": "short-coding", "title": "Build a Linear Probe for Sentiment", "solved": false },
+    { "date": "2026-04-15", "slug": "2026-04-15-induction-heads-circuit", "category": "Conceptual-coding", "title": "Circuit Analysis: Induction Heads", "solved": false },
+    { "date": "2026-04-16", "slug": "2026-04-16-logit-difference", "category": "short-coding", "title": "Logit Difference — the Workhorse Mech-Interp Metric", "solved": false }
+  ]
 }
