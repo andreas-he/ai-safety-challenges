@@ -1,0 +1,12 @@
+{
+  "date": "2026-04-15",
+  "title": "Circuit Analysis: Induction Heads",
+  "category": "Conceptual-coding",
+  "difficulty": "medium",
+  "relevance": "Induction heads are the most well-studied attention circuit in mechanistic interpretability — discovered by Olsson et al. (2022) and central to Neel Nanda's 200 Concrete Open Problems. Detecting them programmatically is a foundational skill for circuit analysis, the core methodology of your LASR preparation and the SAIGE interview track.",
+  "source": "seed-bank",
+  "hints": [
+    "The induction score for a repeated sequence of length L=2k is: mean(attn[i, i-k+1]) for i in range(k, L). This is the average weight on the 'one-step-after-prev-occurrence' position in the second half.",
+    "For classify_head, check induction_score first — before previous_token_score. Induction heads in the first half have no signal, so their average previous-token-like attention across the whole sequence is lower than a true previous-token head's."
+  ]
+}
