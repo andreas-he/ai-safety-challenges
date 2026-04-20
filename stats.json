@@ -1,10 +1,10 @@
 {
   "streak": 0,
-  "totalChallenges": 6,
+  "totalChallenges": 7,
   "solved": 0,
   "categories": {
     "short-coding": {
-      "total": 4,
+      "total": 5,
       "solved": 0
     },
     "multiple-choice": {
@@ -25,6 +25,13 @@
     }
   },
   "history": [
+    {
+      "date": "2026-04-20",
+      "slug": "2026-04-20-steering-vectors",
+      "category": "short-coding",
+      "title": "Steering Vectors — Editing Model Behavior via Residual Stream Directions",
+      "solved": false
+    },
     {
       "date": "2026-04-17",
       "slug": "2026-04-17-superposition-metrics",
