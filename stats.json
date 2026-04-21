@@ -1,6 +1,6 @@
 {
   "streak": 0,
-  "totalChallenges": 7,
+  "totalChallenges": 8,
   "solved": 0,
   "categories": {
     "short-coding": {
@@ -8,7 +8,7 @@
       "solved": 0
     },
     "multiple-choice": {
-      "total": 0,
+      "total": 1,
       "solved": 0
     },
     "explain": {
@@ -25,6 +25,13 @@
     }
   },
   "history": [
+    {
+      "date": "2026-04-21",
+      "slug": "2026-04-21-deceptive-alignment",
+      "category": "multiple-choice",
+      "title": "Deceptive Alignment — When Safety Training Backfires",
+      "solved": false
+    },
     {
       "date": "2026-04-20",
       "slug": "2026-04-20-steering-vectors",
