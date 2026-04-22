@@ -1,6 +1,6 @@
 {
   "streak": 0,
-  "totalChallenges": 8,
+  "totalChallenges": 9,
   "solved": 0,
   "categories": {
     "short-coding": {
@@ -12,7 +12,7 @@
       "solved": 0
     },
     "explain": {
-      "total": 0,
+      "total": 1,
       "solved": 0
     },
     "read-reflect": {
@@ -25,6 +25,13 @@
     }
   },
   "history": [
+    {
+      "date": "2026-04-22",
+      "slug": "2026-04-22-activation-patching",
+      "category": "explain",
+      "title": "Activation Patching — Why Corruption Design Is the Real Science",
+      "solved": false
+    },
     {
       "date": "2026-04-21",
       "slug": "2026-04-21-deceptive-alignment",
@@ -50,7 +57,7 @@
       "date": "2026-04-16",
       "slug": "2026-04-16-logit-difference",
       "category": "short-coding",
-      "title": "Logit Difference \u2014 the Workhorse Mech-Interp Metric",
+      "title": "Logit Difference — the Workhorse Mech-Interp Metric",
       "solved": false
     },
     {
