@@ -1,10 +1,10 @@
 {
   "streak": 0,
-  "totalChallenges": 11,
+  "totalChallenges": 12,
   "solved": 0,
   "categories": {
     "short-coding": {
-      "total": 6,
+      "total": 7,
       "solved": 0
     },
     "multiple-choice": {
@@ -25,6 +25,13 @@
     }
   },
   "history": [
+    {
+      "date": "2026-04-27",
+      "slug": "2026-04-27-sae-reconstruction",
+      "category": "short-coding",
+      "title": "SAE Reconstruction — Implement the Sparse Autoencoder Core",
+      "solved": false
+    },
     {
       "date": "2026-04-24",
       "slug": "2026-04-24-direct-logit-attribution",
