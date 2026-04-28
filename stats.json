@@ -1,6 +1,6 @@
 {
   "streak": 0,
-  "totalChallenges": 12,
+  "totalChallenges": 13,
   "solved": 0,
   "categories": {
     "short-coding": {
@@ -8,7 +8,7 @@
       "solved": 0
     },
     "multiple-choice": {
-      "total": 1,
+      "total": 2,
       "solved": 0
     },
     "explain": {
@@ -26,6 +26,13 @@
   },
   "history": [
     {
+      "date": "2026-04-28",
+      "slug": "2026-04-28-elicitation-vs-capability",
+      "category": "multiple-choice",
+      "title": "Elicitation vs. Capability — Does the Supervisor's Ceiling Matter?",
+      "solved": false
+    },
+    {
       "date": "2026-04-27",
       "slug": "2026-04-27-sae-reconstruction",
       "category": "short-coding",
@@ -36,49 +43,49 @@
       "date": "2026-04-24",
       "slug": "2026-04-24-direct-logit-attribution",
       "category": "short-coding",
-      "title": "Direct Logit Attribution \u2014 Decomposing Transformer Predictions",
+      "title": "Direct Logit Attribution — Decomposing Transformer Predictions",
       "solved": false
     },
     {
       "date": "2026-04-23",
       "slug": "2026-04-23-causal-scrubbing",
       "category": "explain",
-      "title": "Causal Scrubbing \u2014 From Patching to Full Hypothesis Testing",
+      "title": "Causal Scrubbing — From Patching to Full Hypothesis Testing",
       "solved": false
     },
     {
       "date": "2026-04-22",
       "slug": "2026-04-22-activation-patching",
       "category": "explain",
-      "title": "Activation Patching \u2014 Why Corruption Design Is the Real Science",
+      "title": "Activation Patching — Why Corruption Design Is the Real Science",
       "solved": false
     },
     {
       "date": "2026-04-21",
       "slug": "2026-04-21-deceptive-alignment",
       "category": "multiple-choice",
-      "title": "Deceptive Alignment \u2014 When Safety Training Backfires",
+      "title": "Deceptive Alignment — When Safety Training Backfires",
       "solved": false
     },
     {
       "date": "2026-04-20",
       "slug": "2026-04-20-steering-vectors",
       "category": "short-coding",
-      "title": "Steering Vectors \u2014 Editing Model Behavior via Residual Stream Directions",
+      "title": "Steering Vectors — Editing Model Behavior via Residual Stream Directions",
       "solved": false
     },
     {
       "date": "2026-04-17",
       "slug": "2026-04-17-superposition-metrics",
       "category": "short-coding",
-      "title": "Feature Superposition \u2014 Geometry of Compressed Representations",
+      "title": "Feature Superposition — Geometry of Compressed Representations",
       "solved": false
     },
     {
       "date": "2026-04-16",
       "slug": "2026-04-16-logit-difference",
       "category": "short-coding",
-      "title": "Logit Difference \u2014 the Workhorse Mech-Interp Metric",
+      "title": "Logit Difference — the Workhorse Mech-Interp Metric",
       "solved": false
     },
     {
