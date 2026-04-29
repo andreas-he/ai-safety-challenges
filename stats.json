@@ -1,6 +1,6 @@
 {
   "streak": 0,
-  "totalChallenges": 13,
+  "totalChallenges": 14,
   "solved": 0,
   "categories": {
     "short-coding": {
@@ -8,7 +8,7 @@
       "solved": 0
     },
     "multiple-choice": {
-      "total": 2,
+      "total": 3,
       "solved": 0
     },
     "explain": {
@@ -25,6 +25,13 @@
     }
   },
   "history": [
+    {
+      "date": "2026-04-29",
+      "slug": "2026-04-29-sandbagging",
+      "category": "multiple-choice",
+      "title": "Sandbagging — Can Models Strategically Hide Capabilities?",
+      "solved": false
+    },
     {
       "date": "2026-04-28",
       "slug": "2026-04-28-elicitation-vs-capability",
